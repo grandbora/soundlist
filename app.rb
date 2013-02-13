@@ -1,8 +1,12 @@
-require 'rubygems' if RUBY_VERSION < "1.9" #BDNF
 require 'sinatra/base'
 
-class MyApp < Sinatra::Base
-  get '/' do
-    'Hello World from MyApp in separate file!'
-  end
+class App < Sinatra::Base
+    configure do
+        set :port, ENV['PORT']
+    end
+
+    get '/' do
+        'Hello World!'
+    end
+
 end
