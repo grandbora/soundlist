@@ -1,10 +1,20 @@
-define([], function(){
+define(['model/Soundlist', 'model/Search', 'view/Playlist', 'view/Search'], function(Soundlist, Search, PlaylistView, SearchView){
     
-    App = function(){}
+  App = function(){}
 
-    App.prototype.start = function(){
-        alert('helloworld')
-    }
+  App.prototype.start = function(){
 
-    return App;
-});
+    var soundlist = new Soundlist()
+    var search = new Search()
+
+
+    var playlistView = new PlaylistView({collection : soundlist})
+    var searchView = new SearchView({collection : soundlist})
+
+    playlistView.render()
+    searchView.render()
+    
+  }
+
+  return App
+})

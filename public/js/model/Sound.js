@@ -1,32 +1,36 @@
-Sound = Backbone.Model.extend({
+define([], function(){
+  var Sound = Backbone.Model.extend({
 
-  defaults: function(){
-    return {
-      type: Sound.TYPE.SEARCHRESULT
-     ,isPlaying: false   
+    defaults: function(){
+      return {
+        type: Sound.TYPE.SEARCHRESULT
+       ,isPlaying: false   
+      }
     }
-  }
 
- ,play:function () {
-    this.set('isPlaying', true)
-  }
+   ,play:function () {
+      this.set('isPlaying', true)
+    }
 
- ,stop:function () {
-    this.set('isPlaying', false)
-  }
+   ,stop:function () {
+      this.set('isPlaying', false)
+    }
 
- ,addToPlaylist:function () {
-    this.set('type', Sound.TYPE.PLAYLIST)
-  }
+   ,addToPlaylist:function () {
+      this.set('type', Sound.TYPE.PLAYLIST)
+    }
 
- ,removeFromPlaylist:function () {
-    this.set('type', Sound.TYPE.SEARCHRESULT)
-  }
+   ,removeFromPlaylist:function () {
+      this.set('type', Sound.TYPE.SEARCHRESULT)
+    }
 
-}, {
+  }, {
 
-  TYPE:{
-    PLAYLIST : 'TYPE_PLAYLIST'
-   ,SEARCHRESULT : 'TYPE_SEARCHRESULT'
-  }
+    TYPE:{
+      PLAYLIST : 'TYPE_PLAYLIST'
+     ,SEARCHRESULT : 'TYPE_SEARCHRESULT'
+    }
+  })
+
+  return Sound;
 })
