@@ -1,4 +1,4 @@
-define(['model/Soundlist', 'model/Search', 'view/Playlist', 'view/Search'], function(Soundlist, Search, PlaylistView, SearchView){
+define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], function(Soundlist, Search, PlaylistView, SearchView){
     
   App = function(){}
 

@@ -1,4 +1,4 @@
-define([], function(){
+define(function(){
   var Playlist = Backbone.View.extend({
   })
 
