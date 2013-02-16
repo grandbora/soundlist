@@ -1,13 +1,8 @@
 Sound = Backbone.Model.extend({
 
-  TYPE:{
-    PLAYLIST : 'TYPE_PLAYLIST'
-   ,SEARCHRESULT : 'TYPE_SEARCHRESULT'
-  }
-  
-  ,defaults: function(){
+  defaults: function(){
     return {
-      type: this.TYPE.SEARCHRESULT
+      type: Sound.TYPE.SEARCHRESULT
      ,isPlaying: false   
     }
   }
@@ -21,11 +16,17 @@ Sound = Backbone.Model.extend({
   }
 
  ,addToPlaylist:function () {
-    this.set('type', this.TYPE.PLAYLIST)
+    this.set('type', Sound.TYPE.PLAYLIST)
   }
 
  ,removeFromPlaylist:function () {
-    this.set('type', this.TYPE.SEARCHRESULT)
+    this.set('type', Sound.TYPE.SEARCHRESULT)
   }
 
+}, {
+
+  TYPE:{
+    PLAYLIST : 'TYPE_PLAYLIST'
+   ,SEARCHRESULT : 'TYPE_SEARCHRESULT'
+  }
 })

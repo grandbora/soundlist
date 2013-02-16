@@ -13,15 +13,15 @@ describe("sound test suite", function() {
 
   })
 
-  it("change the type", function() {
+  it("add to playlist", function() {
     var sound = new Sound()
-    expect(sound.get('type')).toBe(sound.TYPE.SEARCHRESULT)
+    expect(sound.get('type')).toBe(Sound.TYPE.SEARCHRESULT)
 
     sound.addToPlaylist()
-    expect(sound.get('type')).toBe(sound.TYPE.PLAYLIST)
+    expect(sound.get('type')).toBe(Sound.TYPE.PLAYLIST)
 
     sound.removeFromPlaylist()
-    expect(sound.get('type')).toBe(sound.TYPE.SEARCHRESULT)
+    expect(sound.get('type')).toBe(Sound.TYPE.SEARCHRESULT)
   })
 
 })
