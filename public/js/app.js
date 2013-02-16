@@ -7,13 +7,16 @@ define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], func
     var soundlist = new Soundlist()
     var search = new Search()
 
-
     var playlistView = new PlaylistView({collection : soundlist})
     var searchView = new SearchView({collection : soundlist})
 
-    playlistView.render()
-    searchView.render()
+    var playlistElm = playlistView.render().$el
+    var searchElm = searchView.render().$el
     
+    $('body').append(
+      playlistElm
+     ,searchElm
+    )
   }
 
   return App
