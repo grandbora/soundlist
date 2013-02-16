@@ -6,4 +6,8 @@ class App < Sinatra::Base
         erb :index
     end
 
+    get '/testrunner' do
+        erb :testRunner
+    end
+
 end
