@@ -1,5 +1,5 @@
 require.config({
-  urlArgs: 'bust=' +  (new Date()).getTime() // for dev, remove on prod //BDNF
+  urlArgs: globalConfig.isDev ? 'bust=' +  (new Date()).getTime() : undefined
  ,paths: {
     underscore: 'vendor/underscore'
    ,backbone: 'vendor/backbone'
@@ -25,10 +25,10 @@ require(['app'], function(App){
   'use strict'
 
   SC.initialize({
-    client_id: "YOUR_CLIENT_ID",
-    redirect_uri: "http://example.com/callback.html",
+    client_id: globalConfig.soundcloud.clientId
+   ,redirect_uri: globalConfig.soundcloud.callbackUrl
   });
-  
+
   var app = new App()
   
   $(function() {
