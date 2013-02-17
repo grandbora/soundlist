@@ -4,7 +4,7 @@ define(['text!template/search.html'], function(template){
     template: _.template(template)
 
    ,initialize: function(){
-      this.model.bind('updateKeyword', this.updateKeyword, this)
+      this.listenTo(this.model, 'updateKeyword', this.updateKeyword)
     }
 
    ,updateKeyword: function(){

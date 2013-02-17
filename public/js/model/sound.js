@@ -13,15 +13,11 @@ define(function(){
     }
 
    ,stop:function () {
-      this.set('isPlaying', false)
+      this.set('isPlaying', false, {silent: true})
     }
 
    ,addToPlaylist:function () {
       this.set('type', Sound.TYPE.PLAYLIST)
-    }
-
-   ,removeFromPlaylist:function () {
-      this.set('type', Sound.TYPE.SEARCHRESULT)
     }
 
   }, {

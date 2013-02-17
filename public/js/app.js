@@ -1,4 +1,4 @@
-define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], function(Soundlist, Search, PlaylistView, SearchView){
+define(['model/soundlist', 'model/search', 'view/playlist', 'view/search', 'view/searchResult'], function(Soundlist, Search, PlaylistView, SearchView, SearchResultView){
     
   App = function(){}
 
@@ -13,10 +13,12 @@ define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], func
 
     var playlistElm = playlistView.render().$el
     var searchElm = searchView.render().$el
+    var searchResultElm = searchResultView.render().$el
     
     $('body').append(
       playlistElm
      ,searchElm
+     ,searchResultElm
     )
 
     search.bind('change:keyword', soundlist.resetSearchResults, soundlist)

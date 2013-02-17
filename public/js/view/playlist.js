@@ -1,10 +1,18 @@
-define(function(){
+define(['view/sound/playlist'],function(SoundView){
   var Playlist = Backbone.View.extend({
-  
-    template: _.template('AA')
+
+    initialize: function(){
+      this.listenTo(this.collection, {
+       'change:type': this.addItem
+      })
+    }
+
+   ,addItem: function(changedModel, collection, event) {
+      var view = new SoundView({model: changedModel})
+      this.$el.append(view.$el)
+    }
 
    ,render: function() {
-      this.$el.html(this.template())
       return this
     }
   })
