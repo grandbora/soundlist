@@ -16,13 +16,13 @@ define(['text!template/sound/searchResult.html'], function(template){
       this.render()
     }
 
+   ,play: function() {
+      this.model.play()
+    }
+
    ,addToPlaylist: function() {
       this.model.addToPlaylist()
       this.remove()
-    }
-
-   ,play: function() {
-      this.model.play()
     }
 
    ,render: function() {

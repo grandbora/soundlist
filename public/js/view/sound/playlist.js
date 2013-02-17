@@ -9,10 +9,6 @@ define(['text!template/sound/playlist.html'], function(template){
     }
 
    ,initialize: function(){
-      this.listenTo(this.model, {
-        'remove': this.remove
-      })
-
       this.render()
     }
 
