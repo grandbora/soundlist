@@ -11,7 +11,6 @@ define(['text!template/sound/searchResult.html'], function(template){
    ,initialize: function(){
       this.listenTo(this.model, {
         'remove': this.remove
-       ,'removeFromSearchResults': this.remove
       })
 
       this.render()
@@ -19,6 +18,7 @@ define(['text!template/sound/searchResult.html'], function(template){
 
    ,addToPlaylist: function() {
       this.model.addToPlaylist()
+      this.remove()
     }
 
    ,play: function() {

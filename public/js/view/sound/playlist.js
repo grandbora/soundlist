@@ -4,7 +4,8 @@ define(['text!template/sound/playlist.html'], function(template){
     template: _.template(template)
 
    ,events: {
-      'click .playButton': 'play'
+      'click .removeButton': 'removeFromPlaylist'
+     ,'click .playButton': 'play'
     }
 
    ,initialize: function(){
@@ -17,6 +18,10 @@ define(['text!template/sound/playlist.html'], function(template){
 
    ,play: function() {
       this.model.play()
+    }
+
+   ,removeFromPlaylist: function() {
+      this.model.removeFromPlaylist()
     }
 
    ,render: function() {

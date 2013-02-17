@@ -20,6 +20,10 @@ define(function(){
       this.set('type', Sound.TYPE.PLAYLIST)
     }
 
+   ,removeFromPlaylist:function () {
+      this.set('type', Sound.TYPE.SEARCHRESULT)
+    }
+
   }, {
     TYPE:{
       PLAYLIST : 'TYPE_PLAYLIST'
