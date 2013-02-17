@@ -9,16 +9,11 @@ define(function(){
    ,startPolling: function(){
       var interval = setInterval((function(self) {
         return function() {
-          self.trigger('checkKeyword')
+          self.trigger('updateKeyword')
         }
       } )(this), 500)
 
       this.set('interval', interval)
-    }
-
-   ,checkKeyword: function(keyword){
-      if (this.get('keyword') === keyword) return
-      this.set('keyword', keyword)
     }
   })
 

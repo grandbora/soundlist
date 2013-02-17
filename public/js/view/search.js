@@ -4,11 +4,11 @@ define(['text!template/search.html'], function(template){
     template: _.template(template)
 
    ,initialize: function(){
-      this.model.bind('checkKeyword', this.checkKeyword, this)
+      this.model.bind('updateKeyword', this.updateKeyword, this)
     }
 
-   ,checkKeyword: function(){
-      this.model.checkKeyword(this.getKeyword())
+   ,updateKeyword: function(){
+      this.model.set('keyword', this.getKeyword())
     }
 
    ,getKeyword: function(){

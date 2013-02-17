@@ -15,7 +15,7 @@ define(['model/sound'], function(Sound){
     }
 
    ,fill: function(searchModel, keyword) {
-
+      console.log(keyword)
     }
 
   })
