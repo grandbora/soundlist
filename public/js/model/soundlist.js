@@ -14,11 +14,22 @@ define(['model/sound'], function(Sound){
       this.remove(searchResults)
     }
 
-   ,fill: function(searchModel, keyword) {
-      console.log(keyword)
-      //use SC
+    ,fillSearchResults: function(keyword) {
+      SC.get('/tracks', { q: keyword}, (function(self) {
+        return function(tracks){
+          _.each(tracks, self.addSound, self);
+        }
+      } )(this))
     }
 
+   ,resetSearchResults: function(searchModel, keyword) {
+      this.clearSearchResults()
+      this.fillSearchResults(keyword)
+    }
+
+   ,addSound: function(track) {
+      this.add(new this.model(track))
+    }
   })
 
   return Soundlist
