@@ -1,19 +1,10 @@
-define(['text!template/sound.html'], function(template){
-  var Sound = Backbone.View.extend({
+define(['view/sound/sound'], function(Sound){
+  var Playlist = Sound.extend({
 
-    template: _.template(template)
-
-   ,events: {
-      'click .removeButton': 'removeFromPlaylist'
-     ,'click .playButton': 'play'
-    }
-
-   ,initialize: function(){
-      this.render()
-    }
-
-   ,play: function() {
-      this.model.play()
+    events: function(){
+      return _.extend({}, Sound.prototype.events, {
+        'click .removeButton': 'removeFromPlaylist'
+      })
     }
 
    ,removeFromPlaylist: function() {
@@ -27,5 +18,5 @@ define(['text!template/sound.html'], function(template){
     }
   })
 
-  return Sound
+  return Playlist
 })
