@@ -1,31 +1,15 @@
-define(['model/sound', 'view/sound/playlist'],function(Sound, SoundView){
+define(['view/sound/playlist'],function(SoundView){
   var Playlist = Backbone.View.extend({
 
     initialize: function(){
       this.listenTo(this.collection, {
-       'change:type': this.resetItem
+       'change:type': this.addItem
       })
     }
 
-    ,resetItem: function(changedModel, collection, event) {
-      switch (changedModel.get('type'))
-      {
-        case Sound.TYPE.PLAYLIST:
-          this.addItem(changedModel)
-          break;
-        case Sound.TYPE.SEARCHRESULT:
-        this.removeItem(changedModel)
-          break;
-      }
-    }
-
-   ,addItem: function(changedModel) {
+   ,addItem: function(changedModel, collection, event) {
       var view = new SoundView({model: changedModel})
       this.$el.append(view.$el)
-    }
-
-   ,removeItem: function(changedModel) {
-    this.collection.remove(changedModel)
     }
 
    ,render: function() {

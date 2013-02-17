@@ -22,6 +22,7 @@ define(['text!template/sound/playlist.html'], function(template){
 
    ,removeFromPlaylist: function() {
       this.model.removeFromPlaylist()
+      this.remove()
     }
 
    ,render: function() {

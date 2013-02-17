@@ -21,7 +21,7 @@ define(function(){
     }
 
    ,removeFromPlaylist:function () {
-      this.set('type', Sound.TYPE.SEARCHRESULT)
+      this.set('type', Sound.TYPE.SEARCHRESULT, {silent: true})
     }
 
   }, {
