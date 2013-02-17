@@ -2,7 +2,7 @@ define(function(){
   var Search = Backbone.Model.extend({
 
     defaults:{
-      lastKeyword : ''
+      keyword : ''
      ,interval : null
     }
 
@@ -17,8 +17,8 @@ define(function(){
     }
 
    ,checkKeyword: function(keyword){
-      if (this.get('lastKeyword') === keyword) return
-      this.set('lastKeyword', keyword)
+      if (this.get('keyword') === keyword) return
+      this.set('keyword', keyword)
     }
   })
 

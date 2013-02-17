@@ -18,7 +18,7 @@ define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], func
      ,searchElm
     )
 
-    search.bind('change', soundlist.fill, soundlist)
+    search.bind('change:keyword', soundlist.fill, soundlist)
     search.startPolling()
   }
 
