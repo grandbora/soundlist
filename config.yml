@@ -1,0 +1,8 @@
+development:
+  soundcloud:
+    clientId: 02e2e9d3849e48dcd95fd6d4070e4f07
+    callbackUrl: http://33.33.35.11:5005/login/callback
+production:
+  soundcloud:
+    clientId: 4f28be59d2a52642726db9c703528f65
+    callbackUrl: http://soundlist.herokuapp.com/login/callback
