@@ -13,6 +13,8 @@ define(['view/sound/playlist'],function(SoundView){
     }
 
    ,render: function() {
+      this.$el.sortable()
+      this.$el.disableSelection()
       return this
     }
   })

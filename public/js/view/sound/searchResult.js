@@ -1,4 +1,4 @@
-define(['text!template/sound/searchResult.html'], function(template){
+define(['text!template/sound.html'], function(template){
   var Sound = Backbone.View.extend({
 
     template: _.template(template)
