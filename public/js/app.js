@@ -8,7 +8,7 @@ define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], func
     var search = new Search()
 
     var playlistView = new PlaylistView({collection : soundlist})
-    var searchView = new SearchView({collection : soundlist})
+    var searchView = new SearchView({model : search})
 
     var playlistElm = playlistView.render().$el
     var searchElm = searchView.render().$el
@@ -17,6 +17,9 @@ define(['model/soundlist', 'model/search', 'view/playlist', 'view/search'], func
       playlistElm
      ,searchElm
     )
+
+    search.bind('change', soundlist.fill, soundlist)
+    search.startPolling()
   }
 
   return App

@@ -14,6 +14,10 @@ define(['model/sound'], function(Sound){
       this.remove(searchResults)
     }
 
+   ,fill: function() {
+      console.log('asdHERE')
+    }
+
   })
 
   return Soundlist

@@ -5,6 +5,7 @@ require.config({
    ,backbone: 'vendor/backbone'
    ,jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min'
    ,jqueryUI: '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min'
+   ,text: 'vendor/text'
   },
   shim: {
     'jqueryUI': {
@@ -14,7 +15,7 @@ require.config({
       deps: ['underscore', 'jquery']
     }
    ,'app': {
-      deps: ['backbone', 'jqueryUI']
+      deps: ['backbone', 'jqueryUI', 'text']
     }
   }
 })
