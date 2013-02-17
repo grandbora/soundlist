@@ -21,7 +21,6 @@ define(function(){
     }
 
   }, {
-
     TYPE:{
       PLAYLIST : 'TYPE_PLAYLIST'
      ,SEARCHRESULT : 'TYPE_SEARCHRESULT'
