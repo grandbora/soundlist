@@ -8,6 +8,7 @@ class App < Sinatra::Base
     configure do
         config_file 'config.yml'
         set :isDev, ENV['RACK_ENV'] === 'development'
+        set :protection, :except => :frame_options
     end
 
     get '/' do
