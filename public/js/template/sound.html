@@ -1,10 +1,13 @@
-<div class="sound">
-  <div class="title"><%= title %></div>
-  <% if ('TYPE_PLAYLIST' === type) { %>
-    <div class="removeButton">REMOVE</div>
-  <% } else { %>
-    <div class="addButton">ADD</div>
-  <% } %>
-  
-  <div class="playButton">PLAY</div>
-</div>
+<% if ('TYPE_PLAYLIST' === type) { %>
+  <span class="first ui-icon ui-icon-arrowthick-2-n-s"></span>
+<% } %>
+
+<%= title %>
+
+<% if ('TYPE_PLAYLIST' === type) { %>
+  <span class="removeButton ui-icon ui-icon-circle-close"></span>
+<% } else { %>
+  <span class="addButton ui-icon ui-icon-circle-check"></span>
+<% } %>
+
+<span class="playButton ui-icon ui-icon-play"></span>

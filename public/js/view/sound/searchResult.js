@@ -1,7 +1,9 @@
 define(['view/sound/sound'], function(Sound){
   var SearchResult = Sound.extend({
 
-    events: function(){
+    className: "ui-state-active"
+
+   ,events: function(){
       return _.extend({}, Sound.prototype.events, {
         'click .addButton': 'addToPlaylist'
       })

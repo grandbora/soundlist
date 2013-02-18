@@ -1,7 +1,11 @@
 define(['view/sound/playlist'],function(SoundView){
   var Playlist = Backbone.View.extend({
 
-    initialize: function(){
+    tagName: 'ul'
+   ,className: 'ui-sortable'
+   ,id: 'sortable'
+
+   ,initialize: function(){
       this.listenTo(this.collection, {
        'change:type': this.addItem
       })

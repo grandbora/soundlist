@@ -1,7 +1,11 @@
 define(['view/sound/searchResult'],function(SoundView){
   var SearchResult = Backbone.View.extend({
 
-    initialize: function(){
+    tagName: 'ul'
+   ,className: 'ui-sortable'
+   ,id: 'sortable'
+
+   ,initialize: function(){
       this.listenTo(this.collection, {
        'add': this.addItem
       })

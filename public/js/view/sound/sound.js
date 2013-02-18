@@ -1,7 +1,9 @@
 define(['text!template/sound.html'], function(template){
   var Sound = Backbone.View.extend({
 
-    template: _.template(template)
+    tagName: "li"
+   ,className: "ui-state-highlight"
+   ,template: _.template(template)
 
    ,events: {
       'click .playButton': 'play'
