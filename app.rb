@@ -18,4 +18,8 @@ class App < Sinatra::Base
         erb :testRunner
     end
 
+    get '/bookmarklet/:id' do
+        erb :bookmarklet
+    end
+
 end

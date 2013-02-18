@@ -14,11 +14,13 @@
   <script data-main="js/main" src="js/vendor/require.js"></script>
 </head>
 <body>
-  <div><a href="javascript: (function(d){
-     var js, ref = d.getElementsByTagName('script')[0];
-     js = d.createElement('script'); js.async = true;
-     js.src = '//<%= request.host_with_port %>/js/bookmarklet.js';
+  <div><a href='javascript: 
+    var SOUNDLIST_SC_DATA=<%= locals[:soundcloud] %>;
+    var SOUNDLIST_HOST="<%= request.host_with_port %>";
+    (function(d){ var js, ref = d.getElementsByTagName("script")[0];
+     js = d.createElement("script"); js.async = true;
+     js.src = "//<%= request.host_with_port %>/js/bookmarklet.js";
      ref.parentNode.insertBefore(js, ref)
-   }(document))">Bookmark this!</a></div>
+   }(document))'>Bookmark this!</a></div>
 </body>
 </html>

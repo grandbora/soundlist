@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>SoundList</title>
+  <script>
+    var id = '<%= params[:id] %>', currentList = localStorage.getItem('bookmarked')
+    localStorage.setItem('bookmarked', (currentList ? currentList + ',' : '') + '<%= params[:id] %>')
+  </script>
+</head>
+<body>
+</body>
+</html>
