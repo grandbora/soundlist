@@ -35,4 +35,4 @@ Clientside is built with backbone, dom stuff is done with jquery and jqueryui. S
 Soundlist is stored in localstorage, app listens the changes on the local storage therefore it is able sync it self, when a new sound is added either via bookmarklet or via another instance of the app on another window/tab.  
 I hope the code is clear enough for another developer to dive in.  
 
-[Are you still reading?](http://cdn.hsmemes.com/2012/3/21/067134281d161892c37f5f150815c66b.jpg) Then have a look at [MashTube](http://mashtube.herokuapp.com/)   
+[Are you still reading?](http://cdn.hsmemes.com/2012/3/21/067134281d161892c37f5f150815c66b.jpg) Then have a look at [MashTube](http://mashtube.herokuapp.com/) [<sub>repo</sub>](https://github.com/grandbora/mashtube)   
