@@ -6,6 +6,7 @@
   <script>
     var id = '<%= params[:id] %>', currentList = localStorage.getItem('bookmarked')
     localStorage.setItem('bookmarked', (currentList ? currentList + ',' : '') + '<%= params[:id] %>')
+    alert('track <%= params[:id] %> added to your sound list')
   </script>
 </head>
 <body>

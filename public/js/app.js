@@ -1,10 +1,9 @@
 define(['model/soundlist', 'model/search', 'view/widget', 'view/playlist', 'view/search', 'view/searchResult'], function(Soundlist, Search, WidgetView, PlaylistView, SearchView, SearchResultView){
-    
   App = function(){}
 
   App.prototype.start = function(){
-
     var soundlist = new Soundlist()
+    soundlist.loadLocalData()
     var search = new Search()
 
     var widgetView = new WidgetView()

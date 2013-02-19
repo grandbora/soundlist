@@ -5,7 +5,6 @@ function start () {
   });
 
   SC.get('/resolve', { url: document.URL}, function(res){
-  //BDNF//SC.get('/resolve', { url: 'https://soundcloud.com/dj-fl-oz/tron-mix'}, function(res){
     if(!res || 'track' != res.kind ) return alert('We could not find a track')
 
     ifrm = document.createElement('IFRAME')
