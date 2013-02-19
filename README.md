@@ -20,7 +20,7 @@ Go to [http://soundlist.herokuapp.com/](http://soundlist.herokuapp.com/) now, an
 
 --
 
-You find a “[feature](http://www.troll.me/images/futurama-fry/not-sure-if-its-a-bug-or-a-feature.jpg)” ; report to us at [https://github.com/grandbora](https://github.com/grandbora).   
+You found a “[feature](http://www.troll.me/images/futurama-fry/not-sure-if-its-a-bug-or-a-feature.jpg)” ; report to us at [https://github.com/grandbora](https://github.com/grandbora).   
 
 <b>todos ;  </b>    
 as said app is not tested on mobile devices,    
