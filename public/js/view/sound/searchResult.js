@@ -1,4 +1,8 @@
 define(['view/sound/sound'], function(Sound){
+
+  /**
+  * View for the sounds in the search results
+  */
   var SearchResult = Sound.extend({
 
     className: "ui-state-active"

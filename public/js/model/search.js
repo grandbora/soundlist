@@ -6,6 +6,9 @@ define(function(){
      ,interval : null
     }
 
+    /**
+    * start polling for the changes on the search box
+    */
    ,startPolling: function(){
       var interval = setInterval((function(self) {
         return function() {

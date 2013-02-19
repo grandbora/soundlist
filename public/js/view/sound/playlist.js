@@ -1,4 +1,8 @@
 define(['view/sound/sound'], function(Sound){
+
+  /**
+  * View for the sounds in the playlist
+  */
   var Playlist = Sound.extend({
 
     events: function(){
@@ -7,8 +11,11 @@ define(['view/sound/sound'], function(Sound){
       })
     }
 
+    /**
+    * Removes sound from playlist
+    */
    ,removeFromPlaylist: function() {
-      this.model.removeFromPlaylist()
+      this.model.removeFromPlaylist() //TODO : here the id should be deleted from the local storage
       this.remove()
     }
 

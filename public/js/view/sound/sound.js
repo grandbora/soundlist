@@ -1,4 +1,8 @@
 define(['text!template/sound.html'], function(template){
+
+  /**
+  * Parent view for the sounds
+  */
   var Sound = Backbone.View.extend({
 
     tagName: "li"

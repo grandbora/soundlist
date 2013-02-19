@@ -20,6 +20,9 @@ define(function(){
       this.set('type', Sound.TYPE.PLAYLIST)
     }
 
+    /**
+    * save the id of the sound in comma separated format
+    */
    ,saveToLocalData:function () {
       currentList = localStorage.getItem('bookmarked')
       localStorage.setItem('bookmarked', (currentList ? currentList + ',' : '') + this.get('id'))
