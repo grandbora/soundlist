@@ -3,12 +3,37 @@ define(['model/sound'], function(Sound){
 
     model: Sound
 
+   ,getPlaylistItems: function() {
+      return this.where({type: Sound.TYPE.PLAYLIST})
+    }
+
+   ,getSearchResultItems: function() {
+      return this.where({type: Sound.TYPE.SEARCHRESULT})
+    }
+
+   ,listenLocalData: function() {
+      this.loadById(this.getLocalData())
+
+      $(window).bind('storage', (function(self) {
+        return function (e) {
+          self.handleNewLocalData(e)
+        }
+      })(this))
+    }
+
    ,getLocalData: function() {
       return localStorage.getItem('bookmarked')
     }
 
-   ,loadLocalData: function() {
-      var ids = this.getLocalData()
+   ,getNewData: function() {
+      return this.getLocalData().split(',').pop()
+    }
+
+   ,handleNewLocalData: function(e) {
+      this.loadById(this.getNewData())
+    }
+
+   ,loadById: function(ids) {
       if (null == ids) return
 
       SC.get('/tracks', { ids: ids}, (function(self) {
@@ -16,15 +41,12 @@ define(['model/sound'], function(Sound){
           _.each(tracks, self.addPlaylistItem, self);
         }
       } )(this))
-
     }
 
-   ,getPlaylistItems: function() {
-      return this.where({type: Sound.TYPE.PLAYLIST})
-    }
-
-   ,getSearchResultItems: function() {
-      return this.where({type: Sound.TYPE.SEARCHRESULT})
+   ,addPlaylistItem: function(track) {
+      var playlistItem = new this.model(track)
+      this.add(playlistItem, {silent : true})
+      playlistItem.addToPlaylist()
     }
 
    ,resetSearchResults: function(searchModel, keyword) {
@@ -40,18 +62,12 @@ define(['model/sound'], function(Sound){
    ,fillSearchResults: function(keyword) {
       SC.get('/tracks', { q: keyword}, (function(self) {
         return function(tracks){
-          _.each(tracks, self.addSound, self);
+          _.each(tracks, self.addSearchResultItem, self);
         }
       } )(this))
     }
 
-   ,addPlaylistItem: function(track) {
-      var playlistItem = new this.model(track)
-      this.add(playlistItem, {silent : true})
-      playlistItem.addToPlaylist()
-    }
-
-   ,addSound: function(track) {
+   ,addSearchResultItem: function(track) {
       this.add(new this.model(track))
     }
   })

@@ -3,7 +3,7 @@ define(['model/soundlist', 'model/search', 'view/widget', 'view/playlist', 'view
 
   App.prototype.start = function(){
     var soundlist = new Soundlist()
-    soundlist.loadLocalData()
+    soundlist.listenLocalData()
     var search = new Search()
 
     var widgetView = new WidgetView()
