@@ -19,6 +19,7 @@ define(['view/sound/sound'], function(Sound){
 
    ,addToPlaylist: function() {
       this.model.addToPlaylist()
+      this.model.saveToLocalData()
       this.remove()
     }
 

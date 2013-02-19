@@ -20,6 +20,11 @@ define(function(){
       this.set('type', Sound.TYPE.PLAYLIST)
     }
 
+   ,saveToLocalData:function () {
+      currentList = localStorage.getItem('bookmarked')
+      localStorage.setItem('bookmarked', (currentList ? currentList + ',' : '') + this.get('id'))
+    }
+
    ,removeFromPlaylist:function () {
       this.set('type', Sound.TYPE.SEARCHRESULT, {silent: true})
     }
