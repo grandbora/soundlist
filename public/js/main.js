@@ -1,6 +1,5 @@
 require.config({
-  //urlArgs: globalConfig.isDev ? 'bust=' +  (new Date()).getTime() : undefined
-  urlArgs: 'bust=' +  (new Date()).getTime() //BDNF
+  urlArgs: globalConfig.isDev ? 'bust=' +  (new Date()).getTime() : undefined
  ,paths: {
     underscore: 'vendor/underscore'
    ,backbone: 'vendor/backbone'

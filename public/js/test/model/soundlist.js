@@ -7,26 +7,6 @@ define(['model/sound', 'model/soundlist'], function(Sound, Soundlist){
     var sound2 = new Sound({title:2})
     var sound3 = new Sound({title:3})
     
-    it("play a sound", function() {
-      var many = new Soundlist()
-      many.push(sound0)
-      many.push(sound1)
-      many.push(sound2)
-      many.push(sound3)
-
-      expect(many.getCurrentPlaying()).toEqual(null)
-
-      sound2.play()
-      expect(many.getCurrentPlaying()).toEqual(sound2)
-
-      many.getCurrentPlaying().stop()
-      expect(many.getCurrentPlaying()).toEqual(null)
-
-      sound0.play()
-      expect(many.getCurrentPlaying()).toEqual(sound0)
-
-    })
-
     it("clear search results", function() {
       var many = new Soundlist()
       many.push(sound0)
